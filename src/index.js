@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import './assets/fonts/fontawesome-free-6.1.2-web/css/all.css';
+import './assets/css/normalize.css';
+import './assets/css/styles.css';
+import './assets/css/responsive.css';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <App />
 );
 
 // If you want to start measuring performance in your app, pass a function
