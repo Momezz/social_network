@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Global } from '../../helpers/Global';
 import { useForm } from '../../hooks/useForm';
+import useAuth from '../../hooks/useAuth';
 
 export const Login = () => {
   const { form, changed } = useForm({});
   const [saved, setSaved] = useState("not_senden");
+  const {setAuth } = useAuth();
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -20,10 +22,17 @@ export const Login = () => {
     const data = await request.json();
 
     if(data.status === "success") {
-      //Persistir datos
+      // Persistir datos
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
       setSaved("login");
+      // Set datos en el auth
+      setAuth(data.user);
+
+      // Redireccion
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     }else{
       setSaved("error");
     }
