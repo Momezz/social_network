@@ -9,12 +9,13 @@ import { Register } from '../components/user/Register';
 import { AuthProvider } from '../context/AuthProvider';
 import { People } from '../components/user/People';
 import { Config } from '../components/user/Config';
+import { Following } from '../components/follow/Following';
+import { Followers } from '../components/follow/Followers';
 
 export const Routing = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-
 
         <Routes>
           <Route path='/' element={<PublicLayout />}>
@@ -29,6 +30,8 @@ export const Routing = () => {
             <Route path='logout' element={<Logout />} />
             <Route path='gente' element={<People />} />
             <Route path='ajustes' element={<Config />} />
+            <Route path='siguiendo/:userId' element={<Following />} />
+            <Route path='seguidores/:userId' element={<Followers />} />
           </Route>
 
           <Route path='*' element={
