@@ -4,29 +4,22 @@
     --color-backgroud-navbar: #3785e5;
     --color-text-navbar: white;
     --color-hover-navbar: #1756cc;
-
     --color-border-headers: #eee;
-
     --color-background-btn-success: #5cb85c;
     --color-border-btn-success: #4cae4c;
     --color-background-btn-success-hover: #449d44;
     --color-border-btn-success-hover: #398439;
-
     --color-background-btn-delete: #d9534f;
     --color-border-btn-delete: #d43f3a;
     --color-background-btn-delete-hover: #c9302c;
     --color-border-btn-delete-hover: #ac2925;
-
     --color-border-post: #ddd;
     --color-name-user: #337ab7;
-
     --color-text-black: #555;
     --color-text-nickname: #969393;
     --color-number-stats: green;
-
     --color-border-textarea: #ccc;
     --color-border-textarea-focus: #66afe9;
-
 }
 
 * {
@@ -36,13 +29,11 @@
     list-style: none;
 }
 
-
 html {
     width: 100%;
     height: 100%;
     font-size: 10px;
 }
-
 
 body {
     width: 100%;
@@ -64,7 +55,6 @@ body {
     max-height: 80rem;
 
 }
-
 
 /*ESTILOS NAVBAR*/
 .layout__navbar{
@@ -155,7 +145,6 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-
 }
 
 .content__title, .aside__title{
@@ -174,17 +163,18 @@ body {
     cursor: pointer;
 }
 
+.content__button--rigth{
+    float: right;
+}
 
 .content__button:hover, .content__btn-more-post:hover {
     background-color: var(--color-background-btn-success-hover);
     border-color: var(--color-border-btn-success-hover);
 }
 
-
 .content__posts{
     width: 100%;
 }
-
 
 .posts__post{
     width: 100%;
@@ -196,7 +186,6 @@ body {
     border: 1px solid var(--color-border-post);
     padding: 1.5rem;
 }
-
 
 .post__container{
     display: flex;
@@ -238,7 +227,6 @@ body {
 .post__buttons{
     display: flex;
     align-items: center;
-
 }
 
 .post__button{
@@ -287,12 +275,10 @@ body {
 .layout__aside{
     grid-area: aside;
     margin-right: 2rem;
-
 }
 
 .aside__container{
     width: 100%;
-
 }
 
 .aside__profile-info{
@@ -351,8 +337,6 @@ body {
     text-align: center;
 }
 
-
-
 .following__title{
     display: block;
     font-weight: bold;
@@ -367,7 +351,6 @@ body {
 .following__link:hover >  .following__number{
     color: var(--color-hover-navbar);
 }
-
 
 .aside__container-form{
     width: 100%;
@@ -432,7 +415,6 @@ textarea:focus{
 .form-post__image{
     width: 100%;
 }
-
 
 .form-post__btn-submit,
 input[type="submit"],

@@ -34,8 +34,7 @@ export const Sidebar = () => {
     }
 
     const fileInput = document.querySelector("#file");
-
-    if(data.status === "success" && fileInput.files[0]){
+    if (data.status === "success" && fileInput.files[0]) {
       const formData = new FormData();
       FormData.append("file0", fileInput.files[0]);
       const uploadRequest = await fetch(Global.url + "publication/upload/" + data.publicationStored._id, {
@@ -46,18 +45,16 @@ export const Sidebar = () => {
           "Authorization": token
         }
       });
+
       const uploadData = await uploadRequest.json();
-      if(uploadData.status === "success"){
+      if (uploadData.status === "success") {
         setStored("stored");
-      }else{
+      } else {
         setStored("error");
       }
-      // Por mejorar
-      if(data.status === "success" && uploadData.status === "success"){
-        const myForm = document.querySelector("#publication-form");
-        myForm.reset();
-      }
     }
+    const myForm = document.querySelector("#publication-form");
+    myForm.reset();
   }
 
   return (
@@ -73,28 +70,28 @@ export const Sidebar = () => {
               {auth.image === "default.png" && <img src={avatar} className="container-avatar__img" alt="Foto de perfil" />}
             </div>
             <div className="general-info__container-names">
-              <a href="#" className="container-names__name">{auth.name} {auth.surname}</a>
+              <Link to={"/social/perfil/" + auth._id} className="container-names__name">{auth.name} {auth.surname}</Link>
               <p className="container-names__nickname">{auth.nick}</p>
             </div>
           </div>
           <div className="profile-info__stats">
             <div className="stats__following">
-              <Link to={"siguiendo/" + auth._id} className="following__link">
+              <Link to={"/social/siguiendo/" + auth._id} className="following__link">
                 <span className="following__title">Siguiendo</span>
                 <span className="following__number">{counters.following}</span>
               </Link>
             </div>
             <div className="stats__following">
-              <Link to={"seguidores/" + auth._id} className="following__link">
+              <Link to={"/social/seguidores/" + auth._id} className="following__link">
                 <span className="following__title">Seguidores</span>
                 <span className="following__number">{counters.followed}</span>
               </Link>
             </div>
             <div className="stats__following">
-              <a href="#" className="following__link">
+              <Link to={"/social/perfil/" + auth._id} className="following__link">
                 <span className="following__title">Publicaciones</span>
                 <span className="following__number">{counters.publications}</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
