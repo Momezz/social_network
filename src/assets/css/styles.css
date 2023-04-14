@@ -449,3 +449,7 @@ button{
     border: 1px solid #8a0202;
     color: white;
 }
+
+.error{
+    color: #d92d19;
+}
