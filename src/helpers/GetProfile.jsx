@@ -14,3 +14,15 @@ export const GetProfile = async (userId, setState) => {
   }
   return data;
 }
+
+export const saveUser = async (newUser) => {
+  const request = await fetch(Global.url + "user/register", {
+    method: "POST",
+    body: JSON.stringify(newUser),
+    headers: {
+      "Content-type": "application/json"
+    }
+  });
+  const data = await request.json();
+  return data;
+}
