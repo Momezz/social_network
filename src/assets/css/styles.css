@@ -297,7 +297,6 @@ body {
 .general-info__container-avatar{
     width: 7.5rem;
     height: 7.5rem;
-    border-radius: 100rem;
     margin-right: 1.5rem;
     overflow: hidden;
 }
